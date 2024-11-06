@@ -14,57 +14,21 @@
   --hyperlink: #1875FC;
 
   --font-roboto: 'Roboto', sans-serif;
+
+  --custom-2xs: 6px;
+  --custom-xs: 8px;
+  --custom-sm: 12px;
+  --custom-md: 16px;
+  --custom-lg: 20px;
+  --custom-xl: 24px;
+  --custom-2xl: 32px;
+  --custom-3xl: 36px;
+  --custom-4xl: 48px;
+  --custom-5xl: 64px;
+  --custom-6xl: 72px;
 }
 
 body {
   @apply text-white bg-primaryDark;
   @apply text-base font-roboto font-thin text-center;
-}
-
-.heading {
-  @apply text-4xl;
-  @apply mt-[120px] mb-0;
-}
-
-.form-container {
-  @apply px-4 w-[320px];
-  @apply bg-secondaryDark rounded-xl;
-}
-
-.label-container {
-  @apply flex flex-row justify-between;
-}
-
-.field {
-  @apply my-8;
-  @apply flex flex-col;
-}
-
-label {
-  @apply text-sm;
-}
-
-a {
-  @apply text-xs;
-  @apply text-hyperlink hover:underline;;
-}
-
-input {
-  @apply w-full;
-  @apply text-base;
-  @apply px-2 py-0.5 mt-1 mx-0;
-  @apply border-none rounded-lg;
-  @apply text-white bg-primaryDark;
-}
-
-button {
-  @apply text-base;
-  @apply text-white bg-tertiaryDark;
-  @apply py-1 px-6;
-  @apply border-none rounded-xl;
-}
-
-a.hidden-link {
-  @apply text-xs;
-  @apply hover:underline;
 }
