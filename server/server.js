@@ -2,11 +2,14 @@ const express = require('express');
 
 const cors = require('cors');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const app = express();
 const port = 3000;
+
+const JWT_SECRET = "0123456789";
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -35,7 +38,11 @@ app.post("/register", async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10);
         const newUser = new User({ email: email, password: hashedPassword });
         await newUser.save();
-        res.status(201).json({ message: "User signed up successfully", email: newUser.email });
+        const payload = {
+            id: newUser.id
+        };
+        const token = jwt.sign(payload, JWT_SECRET, { expiresIn: "1h" });
+        res.status(201).json({ message: "User signed up successfully", email: newUser.email, token: token });
     } catch (error) {
         console.error("Error during signup:", error);
         res.status(500).json({ error: "Internal server error" });
@@ -56,7 +63,11 @@ app.post("/login", async (req, res) => {
         if (!isPasswordCorrect) {
             return res.status(401).json({ error: "Invalid password" });
         }
-        res.status(200).json({ message: "Login successful", email: user.email });
+        const payload = {
+            id: user.id
+        };
+        const token = jwt.sign(payload, JWT_SECRET, { expiresIn: "1h" });
+        res.status(200).json({ message: "Login successful", email: user.email, token: token });
     } catch (error) {
         console.error("Error during login:", error);
         res.status(500).json({ error: "Internal server error" });
