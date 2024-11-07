@@ -18,7 +18,7 @@ const SignUp = () => {
             const result = await response.json()
             if (response.ok) {
                 console.log("Sign-up successful:", result)
-                navigate("/dashboard")
+                navigate("/login")
             } else {
                 setError("credentials", { message: result.error })
             }

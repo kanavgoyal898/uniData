@@ -18,6 +18,8 @@ const SignIn = () => {
             const result = await response.json()
             if (response.ok) {
                 console.log("Login successful:", result)
+                sessionStorage.setItem('token', result.token);
+                sessionStorage.setItem('user', result.email);
                 navigate("/dashboard")
             } else {
                 setError("credentials", { message: result.error })

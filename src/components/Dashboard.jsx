@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Dashboard.css'
 
 const publications = [
@@ -36,11 +37,20 @@ const publications = [
 ]
 
 const Dashboard = () => {
+    const navigate = useNavigate()
     const [expandedIndex, setExpandedIndex] = useState(null)
+
     const toggleExpand = (index) => {
         setExpandedIndex(expandedIndex === index ? null : index);
     };
     
+    const logOutHandler = () => {
+        sessionStorage.removeItem("token")
+        sessionStorage.removeItem("user")
+        console.log("Logged Out")
+        navigate("/login")
+    }
+
     return (
         <div className="dashboard-content">
             <div className="left-panel">
@@ -83,7 +93,9 @@ const Dashboard = () => {
                 </div>
             </div>
             <div className="right-panel">
-                Something
+                <button className="filled-button" onClick={logOutHandler}>
+                    Log Out
+                </button> 
             </div>
         </div>
     )
