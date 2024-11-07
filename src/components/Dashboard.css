@@ -1,0 +1,60 @@
+.dashboard-content {
+    @apply flex flex-row
+}
+
+.left-panel {
+    @apply px-sm py-2xl;
+    @apply flex-[1];
+    @apply bg-secondaryDark;
+}
+
+.center-panel {
+    @apply px-lg py-2xl;
+    @apply flex-[3] bg-primaryDark;
+}
+
+.right-panel {
+    @apply px-sm py-2xl;
+    @apply flex-[2];
+    @apply bg-secondaryDark;
+}
+
+.overview {
+    @apply px-0 py-2xl;
+    @apply flex flex-row items-center;
+}
+
+.publications {
+    @apply text-left;
+    @apply flex flex-col;
+}
+
+.publication-heading {
+    @apply text-lg;
+    @apply mx-0 my-xs;
+}
+
+.publication-table {
+    @apply flex flex-col;
+}
+
+.publication-table-header {
+    @apply py-xs px-md;
+    @apply flex flex-row;
+    @apply bg-tertiaryDark;
+}
+
+.publication-table-column-title {
+    @apply flex-[5] pe-md;
+}
+
+.publication-table-column-year {
+    @apply flex-[1] ps-md;
+}
+
+.publication-data-entry {
+    @apply py-xs px-md;
+    @apply flex flex-row;
+    @apply border-b-[2px] border-secondaryDark;
+    @apply cursor-pointer hover:bg-secondaryDark;
+}

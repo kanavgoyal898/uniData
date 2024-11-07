@@ -1,8 +1,9 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt');
+
 const cors = require('cors');
+const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 const app = express();
 const port = 3000;
@@ -12,7 +13,7 @@ app.use(bodyParser.json());
 
 mongoose.connect("mongodb://localhost:27017/uniData")
 .then(() => console.log("Connected to MongoDB"))
-.catch(err => console.error("Error connecting to MongoDB:", err));
+.catch((err) => console.error("Error connecting to MongoDB:", err));
 
 const userSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true },
@@ -32,9 +33,9 @@ app.post("/register", async (req, res) => {
             return res.status(409).json({ error: "User already exists" });
         }
         const hashedPassword = await bcrypt.hash(password, 10);
-        const newUser = new User({ email, password: hashedPassword });
+        const newUser = new User({ email: email, password: hashedPassword });
         await newUser.save();
-        res.status(201).json({ message: "User signed up successfully", user: newUser });
+        res.status(201).json({ message: "User signed up successfully", email: newUser.email });
     } catch (error) {
         console.error("Error during signup:", error);
         res.status(500).json({ error: "Internal server error" });
@@ -55,7 +56,7 @@ app.post("/login", async (req, res) => {
         if (!isPasswordCorrect) {
             return res.status(401).json({ error: "Invalid password" });
         }
-        res.status(200).json({ message: "Login successful", user });
+        res.status(200).json({ message: "Login successful", email: user.email });
     } catch (error) {
         console.error("Error during login:", error);
         res.status(500).json({ error: "Internal server error" });

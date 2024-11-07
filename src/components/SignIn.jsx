@@ -4,8 +4,8 @@ import { useNavigate, Link } from 'react-router-dom'
 import './Credentials.css'
 
 const SignIn = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm()
     const navigate = useNavigate()
+    const { register, handleSubmit, setError, formState: { errors } } = useForm()
     const onSubmit = async (data) => {
         try {
             const response = await fetch("http://localhost:3000/login", {
@@ -20,11 +20,10 @@ const SignIn = () => {
                 console.log("Login successful:", result)
                 navigate("/dashboard")
             } else {
-                console.error("Login failed:", result.error)
-                alert(result.error)
+                setError("credentials", { message: result.error })
             }
         } catch (error) {
-            console.error("Error during login:", error)
+            setError("connection", { message: "Connection failed" })
         }
     }
 
@@ -33,41 +32,40 @@ const SignIn = () => {
             <div className="heading">
                 Sign in to uniData
             </div>
-            <div className="mt-8 form-container">
-                <form action="/" method="POST" onSubmit={handleSubmit(onSubmit)}>
-                <div className="field">
-                    <div className="label-container">
-                    <label className="label-credentials" htmlFor="email">Email Address</label>
+            <div className="mt-[32px] form-container">
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <div className="field">
+                        <div className="label-container">
+                            <label className="label-credentials" htmlFor="email">Email address</label>
+                        </div>
+                        <input className="credentials-input" type="text" name="email" {...register("email", {required: true})} />
                     </div>
-                    <input className="credentials-input" type="email" name="email" {...register("email")} />
-                </div>
-                <div className="field">
-                    <div className="label-container">
-                    <label className="label-credentials" htmlFor="password">Password</label>
-                    <a href="/">Forgot password?</a>
+                    <div className="field">
+                        <div className="label-container">
+                            <label className="label-credentials" htmlFor="password">Password</label>
+                            <Link to="/">Forgot password?</Link>
+                        </div>
+                        <input className="credentials-input" type="password" name="password" {...register("password", {required: true})} />
                     </div>
-                    <input className="credentials-input" type="password" name="password" {...register("password")} />
-                </div>
-                <div className="button-field">
-                    <div>
-                    <button className="button-filled" type="submit">Login</button>
+                    <div className="button-field">
+                        <button className="button-filled" type="submit">Login</button>
                     </div>
-                </div>
                 </form>
             </div>
-
-            <div className="mt-8 form-container">
+            { errors.connection && <p className="error-message">{errors.connection.message}</p> }
+            { errors.credentials && <p className="error-message">{errors.credentials.message}</p> }
+            <div className="mt-[32px] form-container">
                 <div className="field">
-                <div>
-                    New to uniData?
-                </div>
-                <Link to="/register">Create an account</Link>
+                    <div>
+                        New to uniData?
+                    </div>
+                    <Link to="/register">Create an account</Link>
                 </div>
             </div>
-            <div className="mt-8 px-4 w-[360px]">
+            <div className="mt-[32px] w-[240px] sm:w-[360px]">
                 <ul className="label-container">
-                <li><a className="hidden-link" href="/">Terms & Conditions</a></li>
-                <li><a className="hidden-link" href="/">Privacy & Support</a></li>
+                <li><Link to="/tc">Terms & Conditions</Link></li>
+                <li><Link to="/ps">Privacy & Support</Link></li>
                 </ul>
             </div>
         </div>
