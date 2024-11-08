@@ -1,4 +1,5 @@
 .section {
+    @apply m-[32px];
     @apply flex flex-col items-center;
 }
 
@@ -10,13 +11,13 @@
 .credentials-form-container {
     @apply mb-[12px];
     @apply bg-secondary;
-    @apply rounded-[16px] w-[360px];
+    @apply rounded-[16px] w-[240px] md:w-[360px];
     @apply flex flex-row justify-center;
 }
 
 .credentials-form-box {
     @apply pt-[32px];
-    @apply flex flex-col gap-[36px];
+    @apply flex flex-col gap-[16px] md:gap-[36px];
 }
 
 .credential-container {
@@ -24,14 +25,19 @@
 }
 
 .credential-label {
-    @apply w-[300px];
-    @apply flex flex-row justify-between;
+    @apply w-[200px] md:w-[300px];
+    @apply flex flex-row justify-between items-center;
+}
+
+.credential-label-data {
+    @apply text-xs;
 }
 
 .credential-input {
-    @apply mt-[4px] px-[8px];
+    @apply text-xs;
+    @apply mt-[2px] md:mt-[4px] px-[8px];
     @apply bg-primary text-complement;
-    @apply h-[32px] w-[300px] rounded-[8px]; 
+    @apply h-[20px] md:h-[32px] w-[200px] md:w-[300px] rounded-[4px] md:rounded-[8px]; 
 }
 
 .credentials-button-container {
@@ -39,6 +45,7 @@
 }
 
 .credential-button {
+    @apply text-xs;
     @apply max-w-fit;
     @apply px-[24px] py-[8px];
     @apply bg-primary-accent border-[2px] border-secondary rounded-[8px];  
@@ -47,14 +54,23 @@
 .alternative-sign {
     @apply py-[16px];
     @apply bg-secondary;
-    @apply rounded-[16px] w-[360px];
+    @apply rounded-[16px] w-[240px] md:w-[360px];
     @apply flex flex-col items-center gap-[4px];
+}
+
+.instructions {
+    @apply text-xs;
 }
 
 .credentials-link {
     @apply text-2xs;
     @apply hover:underline;
     @apply text-secondary-accent;
+}
+
+.more-links {
+    @apply w-[300px] pt-[24px];
+    @apply flex md:flex flex-col md:flex-row justify-around items-center gap-[8px]; 
 }
 
 .form-error {

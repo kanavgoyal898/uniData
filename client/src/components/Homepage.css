@@ -1,4 +1,5 @@
 .hero-section {
+    @apply m-[32px];
     @apply ps-0 md:ps-[128px] items-center md:items-start;
 }
 

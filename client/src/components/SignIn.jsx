@@ -15,14 +15,14 @@ const SignIn = () => {
                 <form className="credentials-form-box" onSubmit={handleSubmit(onSubmit)}>
                     <div className="credential-container">
                         <div className="credential-label">
-                            <label htmlFor="email">Email address</label>
+                            <label className="credential-label-data"  htmlFor="email">Email address</label>
                         </div>
                         <input className="credential-input" type="email" {...register("email", {required: {value: true, message: "Required field"}})} />
                         {errors.email && <p className="form-error">{errors.email.message}</p>}
                     </div>
                     <div className="credential-container">
                         <div className="credential-label">
-                            <label htmlFor="password">Password</label>
+                            <label className="credential-label-data" htmlFor="password">Password</label>
                             <a className="credentials-link" href="/">Forgot password?</a>
                         </div>
                         <input className="credential-input" type="password" {...register("password", {required: {value: true, message: "Required field"}})} />
@@ -37,10 +37,10 @@ const SignIn = () => {
                 </form>
             </div>
             <div className="alternative-sign">
-                <div>New to uniData?</div>
+                <div className="instructions">New to uniData?</div>
                 <a className="credentials-link" href="/">Create an account</a>
             </div>
-            <div className="flex flex-row w-[300px] justify-around pt-[24px]">
+            <div className="more-links">
                 <a className="credentials-link" href="/">Terms & Conditions</a>
                 <a className="credentials-link" href="/">Privacy & Support</a>
             </div>
