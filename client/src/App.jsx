@@ -1,10 +1,11 @@
 import './App.css'
+import Homepage from './components/Homepage'
 
 function App() {
 
   return (
-    <div>
-      uniData
+    <div className="content">
+      <Homepage />
     </div>
   )
 }

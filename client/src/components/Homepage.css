@@ -1,0 +1,36 @@
+.hero-section {
+    @apply ps-0 md:ps-[128px] items-center md:items-start;
+}
+
+.hero-text {
+    @apply text-center md:text-left;
+    @apply flex flex-col items-center md:items-start;
+}
+
+.hero-heading {
+    @apply text-3xl;
+}
+
+.sub-hero-heading {
+    @apply text-xl w-[256px] md:w-[448px];
+}
+
+.hero-buttons {
+    @apply text-md;
+    @apply pt-[24px];
+    @apply justify-center md:justify-start;
+    @apply items-center md:items-start;
+    @apply flex flex-col md:flex md:flex-row gap-[8px] md:gap-[36px];
+}
+
+.explore-button {
+    @apply max-w-fit;
+    @apply px-[24px] py-[8px];
+    @apply bg-tertiary border-[2px] border-secondary rounded-[8px]; 
+}
+
+.sign-button {
+    @apply max-w-fit;
+    @apply px-[24px] py-[8px];
+    @apply bg-primary-accent border-[2px] border-secondary rounded-[8px]; 
+}

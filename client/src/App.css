@@ -1,0 +1,5 @@
+.content {
+  margin: 12px;
+  @apply flex flex-col justify-center;
+  @apply w-screen h-screen min-h-screen;
+}

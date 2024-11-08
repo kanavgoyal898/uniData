@@ -1,3 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --primary: #FFFFFF;
+  --secondary: #F6F8FA;
+  --tertiary: #F6F8FA;
+  --primary-accent: #1E883E;
+  --secondary-accent: #0A69DA;
+  --complement: #000000;
+
+  --font-3xs: 8px;
+  --font-2xs: 12px;
+  --font-xs: 16px;
+  --font-sm: 20px;
+  --font-md: 24px;
+  --font-lg: 32px;
+  --font-xl: 36px;
+  --font-2xl: 48px;
+  --font-3xl: 64px;
+  --font-4xl: 72px;
+  --font-5xl: 96px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #0D1116;
+    --secondary: #151B23;
+    --tertiary: #020408;
+    --primary-accent: #238636;
+    --secondary-accent: #4593F8;
+    --complement: #FFFFFF;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-3xs: calc(2/3 * 8px);
+    --font-2xs: calc(2/3 * 12px);
+    --font-xs: calc(2/3 * 16px);
+    --font-sm: calc(2/3 * 20px);
+    --font-md: calc(2/3 * 24px);
+    --font-lg: calc(2/3 * 32px);
+    --font-xl: calc(2/3 * 36px);
+    --font-2xl: calc(2/3 * 48px);
+    --font-3xl: calc(2/3 * 64px);
+    --font-4xl: calc(2/3 * 72px);
+    --font-5xl: calc(2/3 * 96px);
+  }
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+
+  @apply font-light leading-[1.2];
+  @apply bg-primary text-complement;
+}

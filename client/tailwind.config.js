@@ -5,8 +5,31 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'primary': 'var(--primary)',
+        'secondary': 'var(--secondary)',
+        'tertiary': 'var(--tertiary)',
+        'primary-accent': 'var(--primary-accent)',
+        'secondary-accent': 'var(--secondary-accent)',
+        'complement': 'var(--complement)',
+      },
+      fontSize: {
+        '3xs': 'var(--font-3xs)',
+        '2xs': 'var(--font-2xs)',
+        'xs': 'var(--font-xs)',  
+        'sm': 'var(--font-sm)',  
+        'md': 'var(--font-md)',  
+        'lg': 'var(--font-lg)',  
+        'xl': 'var(--font-xl)',  
+        '2xl': 'var(--font-2xl)',
+        '3xl': 'var(--font-3xl)',
+        '4xl': 'var(--font-4xl)',
+        '5xl': 'var(--font-5xl)',
+      },
+    },
   },
+  darkMode: 'media',
   plugins: [],
 }
 
