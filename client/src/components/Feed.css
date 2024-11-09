@@ -1,0 +1,136 @@
+.page {
+    @apply h-full;
+}
+
+.navigation-bar {
+    @apply flex flex-row justify-between items-center;
+    @apply bg-primary border-b-[2px] border-secondary;
+    @apply ps-[4px] sm:ps-[52px] pe-[4px] sm:pe-[12px] h-[72px];
+}
+
+.home-navigation-button {
+    @apply text-md;
+}
+
+.search-container {
+    @apply hidden sm:flex;
+}
+
+.search-bar {
+    @apply text-xs text-complement;
+    @apply bg-secondary rounded-[16px];
+    @apply px-[16px] py-[4px] h-[36px] min-w-[360px] max-w-[720px];
+}
+
+.profile-container {
+    @apply gap-[12px];
+    @apply flex flex-row items-center;
+}
+
+.profile-box {
+    @apply hidden;
+    @apply md:flex md:flex-col md:items-end;
+}
+
+.profile-name {
+    @apply text-xs text-complement;
+}
+
+.profile-picture {
+    @apply h-[48px] w-[48px];
+    @apply rounded-full object-cover;
+}
+
+.action-buttons {
+    @apply flex flex-row gap-[8px];
+}
+
+.status {
+    @apply text-2xs text-primary-accent;
+}
+
+.sign-out {
+    @apply text-2xs text-secondary-accent;
+}
+
+.feed-container {
+    @apply flex flex-row justify-center;
+}
+
+.section-heading {
+    @apply text-xs;
+}
+
+.left-container {
+    @apply bg-primary pt-[16px];
+    @apply hidden md:flex-[1] md:flex md:flex-col items-center; 
+}
+
+.middle-container {
+    @apply bg-tertiary;
+    @apply flex-[3] flex flex-col items-center;
+    @apply border-0 md:border-l-[2px] md:border-r-[2px] md:border-secondary;
+}
+
+.middle-container-heading {
+    @apply text-xs;
+    @apply bg-primary;
+    @apply w-full py-[16px];
+    @apply flex flex-row justify-center;
+    @apply border-b-[2px] border-secondary;
+}
+
+.right-container {
+    @apply bg-tertiary pt-[16px];
+    @apply hidden md:flex-[1] md:flex md:flex-col items-center;
+}
+
+.contributor-list {
+    @apply flex flex-row items-center gap-[12px];
+}
+
+.contributor-picture {
+    @apply rounded-full object-cover;
+    @apply h-[28px] w-[28px] ml-[-7px];
+    @apply border-[1px] border-complement;
+}
+
+.contributor-picture:first-child {
+    @apply ml-[0px];
+}
+
+.more-contributors {
+    @apply hidden lg:flex;
+    @apply hover:underline;
+    @apply text-2xs text-secondary-accent;
+}
+
+.publication-table {
+    @apply my-[12px];
+}
+
+.publication-row {
+    @apply py-[8px] md:py-[16px];
+    @apply flex flex-row gap-[16px];
+}
+
+.table-column-serial {
+    @apply text-xs;
+    @apply me-[6px];
+    @apply flex-[1] text-end;
+}
+
+.table-column-title {
+    @apply text-xs;
+    @apply me-[12px];
+    @apply flex-[11] md:flex-[8] text-start;
+}
+
+.table-column-profiles {
+    @apply hidden md:flex md:flex-[3] text-start;
+}
+
+.contributor-pictures {
+    @apply flex flex-row relative;
+}
+
