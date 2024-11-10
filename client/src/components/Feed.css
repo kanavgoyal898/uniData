@@ -3,6 +3,7 @@
 }
 
 .navigation-bar {
+    @apply sticky top-0;
     @apply flex flex-row justify-between items-center;
     @apply bg-primary border-b-[2px] border-secondary;
     @apply ps-[4px] sm:ps-[52px] pe-[4px] sm:pe-[12px] h-[72px];
@@ -50,10 +51,12 @@
 }
 
 .sign-out {
+    @apply hover:underline;
     @apply text-2xs text-secondary-accent;
 }
 
 .feed-container {
+    height: calc(100vh - 72px);
     @apply flex flex-row justify-center;
 }
 
@@ -62,12 +65,14 @@
 }
 
 .left-container {
+    @apply overflow-y-auto;
     @apply bg-primary pt-[16px];
     @apply hidden md:flex-[1] md:flex md:flex-col items-center; 
 }
 
 .middle-container {
     @apply bg-tertiary;
+    @apply overflow-y-auto;
     @apply flex-[3] flex flex-col items-center;
     @apply border-0 md:border-l-[2px] md:border-r-[2px] md:border-secondary;
 }
@@ -81,6 +86,7 @@
 }
 
 .right-container {
+    @apply overflow-y-auto;
     @apply bg-tertiary pt-[16px];
     @apply hidden md:flex-[1] md:flex md:flex-col items-center;
 }
@@ -91,7 +97,7 @@
 
 .contributor-picture {
     @apply rounded-full object-cover;
-    @apply h-[28px] w-[28px] ml-[-7px];
+    @apply h-[28px] w-[28px] ml-[-14px];
     @apply border-[1px] border-complement;
 }
 
@@ -110,6 +116,7 @@
 }
 
 .publication-row {
+    @apply hover:bg-primary;
     @apply py-[8px] md:py-[16px];
     @apply flex flex-row gap-[16px];
 }
