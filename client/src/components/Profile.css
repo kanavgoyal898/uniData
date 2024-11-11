@@ -1,0 +1,292 @@
+.primary-button {
+    @apply text-xs;
+    @apply rounded-[8px];
+    @apply bg-primary-accent;
+    @apply px-[24px] py-[8px]; 
+}
+
+.main-content {
+    @apply flex flex-row;
+    height: calc(100vh - 72px);
+}
+
+.profile-left-container {
+    @apply overflow-y-auto;
+    @apply h-[calc(100vh-72px)];
+    @apply flex-[1] flex flex-col items-center;
+}
+
+.center-container {
+    @apply overflow-y-auto;
+    @apply h-[calc(100vh-72px)];
+    @apply px-[16px] py-[16px] gap-[12px];
+    @apply hidden lg:flex-[2] lg:flex lg:flex-col lg:items-start;
+    @apply border-l-[2px] border-r-[2px] border-secondary
+}
+
+.picture-form {
+    @apply my-[8px];
+    @apply flex flex-col items-center;
+}
+
+.picture-container {
+    @apply h-[224px] w-[224px] mb-[16px];
+}
+
+.picture {
+    @apply h-full w-full;
+    @apply object-cover rounded-full;
+}
+
+.edit-picture-button {
+    @apply text-xs;
+    @apply bg-secondary;
+    @apply px-[24px] py-[8px] rounded-[16px];
+}
+
+.details-form {
+    @apply flex flex-col items-center;
+}
+
+.name-details {
+    @apply min-w-[296px] max-w-[324px];
+    @apply gap-[4px];
+    @apply flex flex-col;
+}
+
+.salutation-row {
+    @apply flex flex-row;
+    @apply justify-between items-start;
+}
+
+.salutation-container {
+    @apply max-w-fit;
+    @apply bg-secondary;
+    @apply rounded-[8px];
+    @apply px-[4px] py-[4px];
+}
+
+.salutation {
+    @apply text-xs;
+    @apply bg-secondary;
+    @apply px-[4px];
+}
+
+.edit-button {
+    @apply h-fit;
+    @apply box-content;
+    @apply text-2xs;
+    @apply rounded-full;
+    @apply bg-primary-accent;
+    @apply px-[12px] py-[4px];
+}
+
+.about-container {
+    @apply gap-[8px];
+    @apply flex flex-col items-center;
+}
+
+.name-input {
+    @apply w-full;
+    @apply text-2xs;
+    @apply bg-secondary;
+    @apply rounded-[8px];
+    @apply px-[16px] py-[8px];
+}
+
+.about-input {
+    @apply text-2xs;
+    @apply resize-none;
+    @apply bg-secondary;
+    @apply rounded-[8px];
+    @apply w-full h-[96px];
+    @apply px-[16px] py-[8px];
+}
+
+.gender-container {
+    @apply flex flex-row gap-[8px];
+}
+
+.gender-radio-button-input {
+    @apply hidden;
+}
+
+.gender-radio-button {
+    @apply text-2xs;
+    @apply bg-secondary;
+    @apply rounded-[16px];
+    @apply px-[16px] py-[4px];
+}
+
+.gender-radio-button-input:checked + .gender-radio-button {
+    @apply text-2xs;
+    @apply rounded-[16px];
+    @apply bg-primary-accent;
+    @apply px-[16px] py-[4px];
+}
+
+.socials-container {
+    @apply py-[16px];
+    @apply gap-[8px];
+    @apply flex flex-col justify-start;
+}
+
+.social-container {
+    @apply flex flex-row gap-[16px];
+}
+
+.social-icon-container {
+    @apply h-[24px] w-[24px];
+}
+
+.social-icon {
+    @apply rounded-full;
+    @apply object-cover;
+}
+
+.social-link-container {
+    @apply w-full;
+    @apply px-[8px] py-[2px];
+    @apply text-2xs;
+    @apply bg-secondary;
+    @apply rounded-[8px];
+}
+
+.main-content-heading {
+    @apply text-sm;
+}
+
+.education-container {
+    @apply py-[8px];
+    @apply gap-[4px];
+    @apply w-[640px];
+    @apply flex flex-col items-start;
+    max-height: calc((100vh - 72px) / 2);
+}
+
+.degree-container {
+    @apply w-full;
+    @apply flex flex-row gap-[4px];
+}
+
+.degree-name {
+    @apply text-xs;
+    @apply w-full;
+    @apply bg-secondary;
+    @apply rounded-l-[8px];
+    @apply px-[8px] py-[4px];
+}
+
+.degree-year {
+    @apply text-xs;
+    @apply w-[72px];
+    @apply bg-secondary;
+    @apply rounded-r-[8px];
+    @apply px-[8px] py-[4px];
+}
+
+.university-name {
+    @apply w-full;
+    @apply text-xs;
+    @apply bg-secondary;
+    @apply rounded-[8px];
+    @apply px-[8px] py-[4px];
+}
+
+.new-publication {
+    @apply w-[640px];
+    @apply flex flex-col;
+}
+
+.publication-row {
+    @apply flex flex-row;
+    @apply justify-between items-end;
+}
+
+.import-button {
+    @apply text-xs;
+    @apply rounded-[8px];
+    @apply px-[24px] py-[8px];
+    @apply bg-secondary-accent;
+}
+
+.publication-details-row {
+    @apply flex flex-row gap-[8px];
+}
+
+.publication-details {
+    @apply flex-[3];
+    @apply flex flex-col;
+    @apply items-start gap-[8px];
+}
+
+.publication-title {
+    @apply w-full;
+    @apply text-xs;
+    @apply bg-secondary;
+    @apply rounded-[8px];
+    @apply px-[8px] py-[8px];
+}
+
+.publication-abstract {
+    @apply text-xs;
+    @apply resize-none;
+    @apply bg-secondary;
+    @apply rounded-[8px];
+    @apply h-[160px] w-full;
+    @apply px-[8px] py-[8px];
+}
+
+.publication-sub-details {
+    @apply flex-[1] items-start;
+    @apply flex flex-col gap-[8px];
+}
+
+.submit-button {
+    @apply text-xs;
+    @apply rounded-[8px];
+    @apply px-[24px] py-[8px];
+    @apply bg-primary-accent;
+}
+
+.publication-domain {
+    @apply w-full;
+    @apply text-2xs;
+    @apply bg-secondary;
+    @apply rounded-[8px];
+    @apply px-[8px] py-[8px];
+}
+
+.collaborators-container {
+    @apply w-full gap-[32px];
+    @apply flex flex-col items-center;
+}
+
+.collaborators-sub-container {
+    @apply flex-wrap;
+    @apply w-full max-h-[124px];
+    @apply flex flex-row justify-center gap-x-[8px] gap-y-[8px];
+}
+
+.collaborator-container {
+    @apply h-[28px] w-[28px];
+}
+
+.collaborator-picture {
+    @apply h-[28px] w-[28px];
+    @apply object-cover rounded-full;
+}
+
+.extra-collaborators {
+    @apply text-3xs;
+    @apply bg-transparent;
+    @apply px-[8px] py-[8px] box-content;
+    @apply rounded-full border-[2px] border-secondary-accent;
+}
+
+.add-collaborators-button {
+    @apply text-2xs;
+    @apply rounded-[8px];
+    @apply px-[24px] py-[8px];
+    @apply bg-secondary-accent;
+}

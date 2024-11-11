@@ -1,0 +1,56 @@
+.page {
+    @apply h-full;
+}
+
+.navigation-bar {
+    @apply sticky top-0;
+    @apply flex flex-row justify-between items-center;
+    @apply bg-primary border-b-[2px] border-secondary;
+    @apply ps-[4px] sm:ps-[52px] pe-[4px] sm:pe-[12px] h-[72px];
+}
+
+.home-navigation-button {
+    @apply text-md;
+}
+
+.search-container {
+    @apply hidden sm:flex;
+}
+
+.search-bar {
+    @apply text-xs text-complement;
+    @apply bg-secondary rounded-[16px];
+    @apply px-[16px] py-[4px] h-[36px] min-w-[360px] max-w-[720px];
+}
+
+.profile-container {
+    @apply gap-[12px];
+    @apply flex flex-row items-center;
+}
+
+.profile-box {
+    @apply hidden;
+    @apply md:flex md:flex-col md:items-end;
+}
+
+.profile-name {
+    @apply text-xs text-complement;
+}
+
+.profile-picture {
+    @apply h-[48px] w-[48px];
+    @apply rounded-full object-cover;
+}
+
+.action-buttons {
+    @apply flex flex-row gap-[8px];
+}
+
+.status {
+    @apply text-2xs text-primary-accent;
+}
+
+.sign-out {
+    @apply hover:underline;
+    @apply text-2xs text-secondary-accent;
+}

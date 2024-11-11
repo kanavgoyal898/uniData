@@ -1,4 +1,5 @@
 import React from 'react'
+import './Page.css'
 import './Feed.css'
 
 const Publications = [

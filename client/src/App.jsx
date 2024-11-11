@@ -1,5 +1,6 @@
 import './App.css'
 import Homepage from './components/Homepage'
+import Profile from './components/Profile'
 import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
 import Feed from './components/Feed'
