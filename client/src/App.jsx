@@ -1,4 +1,5 @@
 import './App.css'
+import PublicProfile from './components/PublicProfile'
 import Homepage from './components/Homepage'
 import Profile from './components/Profile'
 import SignIn from './components/SignIn'

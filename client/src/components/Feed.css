@@ -34,6 +34,40 @@
     @apply hidden md:flex-[1] md:flex md:flex-col items-center;
 }
 
+.author-details-container {
+    @apply w-full;
+    @apply px-[16px] my-[16px];
+    @apply justify-start gap-[16px];
+    @apply flex flex-col md:flex-row;
+    @apply items-center md:items-end;
+}
+
+.author-picture-container {
+    @apply h-[144px] w-[144px];
+}
+
+.author-picture {
+    @apply h-[144px] w-[144px];
+    @apply rounded-full object-cover;
+}
+
+.author-details {
+    @apply flex flex-col items-center md:items-start;
+}
+
+.author-name {
+    @apply text-xl;
+}
+
+.author-email {
+    @apply text-xs;
+}
+
+.socials {
+    @apply my-[8px];
+    @apply flex flex-row gap-[16px];
+}
+
 .contributor-list {
     @apply flex flex-row items-center gap-[12px];
 }
