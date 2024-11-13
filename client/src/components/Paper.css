@@ -1,0 +1,73 @@
+.paper-container {
+    height: calc(100vh - 72px);
+    @apply flex flex-row justify-center;
+}
+
+.paper-content {
+    @apply overflow-y-scroll;
+    @apply px-[8px] md:px-[32px] py-[16px] md:py-[64px];
+    @apply flex-[3] flex flex-col gap-[16px] md:gap-[64px] items-start;
+}
+
+.paper-details {
+    @apply flex flex-col gap-[8px];
+}
+
+.paper-category {
+    @apply text-2xs;
+    @apply px-[24px] py-[8px];
+    @apply bg-primary-accent max-w-fit rounded-full;
+}
+
+.paper-title {
+    @apply text-lg hover:text-secondary-accent;
+}
+
+.paper-abstract {
+    @apply flex flex-col;
+}
+
+.abstract-title {
+    @apply text-xs;
+    @apply font-bold;
+}
+
+.abstract {
+    @apply text-sm;
+    @apply font-thin;
+}
+
+.details {
+    @apply overflow-y-scroll;
+    @apply hidden lg:flex-[1] mx-[16px];
+    @apply lg:flex lg:flex-col lg:items-center;
+}
+
+.sub-container {
+    @apply flex flex-col items-center;
+}
+
+.contributor-heading {
+    @apply text-sm;
+    @apply my-[16px];
+}
+
+.contributor-list {
+    @apply px-[16px];
+    @apply flex-wrap;
+    @apply flex flex-row justify-center;
+}
+
+.contributor-container {
+    @apply h-[32px] w-[32px];
+}
+
+.contributor {
+    @apply h-[32px] w-[32px];
+    @apply rounded-full object-cover;
+}
+
+.references-title {
+    @apply text-sm;
+    @apply my-[16px];
+}
