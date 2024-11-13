@@ -11,8 +11,8 @@
 .credentials-form-container {
     @apply mb-[12px];
     @apply bg-secondary;
-    @apply rounded-[16px] w-[240px] md:w-[360px];
     @apply flex flex-row justify-center;
+    @apply rounded-[16px] w-[240px] md:w-[360px];
 }
 
 .credentials-form-box {
@@ -35,8 +35,8 @@
 
 .credential-input {
     @apply text-xs;
-    @apply mt-[2px] md:mt-[4px] px-[8px];
     @apply bg-primary text-complement;
+    @apply mt-[2px] md:mt-[4px] px-[8px];
     @apply h-[20px] md:h-[32px] w-[200px] md:w-[300px] rounded-[4px] md:rounded-[8px]; 
 }
 
@@ -54,8 +54,8 @@
 .alternative-sign {
     @apply py-[16px];
     @apply bg-secondary;
-    @apply rounded-[16px] w-[240px] md:w-[360px];
     @apply flex flex-col items-center gap-[4px];
+    @apply rounded-[16px] w-[240px] md:w-[360px];
 }
 
 .instructions {
@@ -70,7 +70,8 @@
 
 .more-links {
     @apply w-[300px] pt-[24px];
-    @apply flex md:flex flex-col md:flex-row justify-around items-center gap-[8px]; 
+    @apply flex md:flex flex-col md:flex-row;
+    @apply justify-around items-center gap-[8px]; 
 }
 
 .form-error {

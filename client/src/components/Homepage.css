@@ -19,8 +19,8 @@
 .hero-buttons {
     @apply text-md;
     @apply pt-[24px];
-    @apply justify-center md:justify-start;
     @apply items-center md:items-start;
+    @apply justify-center md:justify-start;
     @apply flex flex-col md:flex md:flex-row gap-[8px] md:gap-[36px];
 }
 

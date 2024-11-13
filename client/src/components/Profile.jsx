@@ -1,6 +1,7 @@
 import React from 'react'
-// import './Page.css'
+import './Page.css'
 import './Profile.css'
+import Navigation from './Navigation'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBuildingColumns, faLink } from '@fortawesome/free-solid-svg-icons'
 import { faGoogleScholar, faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
@@ -132,17 +133,7 @@ const Profile = () => {
 
     return (
         <div className="page">
-            <nav className="navigation-bar">
-                <a className="home-navigation-button" href="/">uniData</a>
-                <div className="search-container">
-                    <form action="/">
-                        <input placeholder="Search" className="search-bar" type="text" />
-                    </form>
-                </div>
-                <button className="primary-button">
-                    Sign out
-                </button>
-            </nav>
+            <Navigation />
             <div className="main-content">
                 <div className="profile-left-container">
                     <form action="/" id="picture-form" className="picture-form">

@@ -20,8 +20,8 @@
     @apply overflow-y-auto;
     @apply h-[calc(100vh-72px)];
     @apply px-[16px] py-[16px] gap-[12px];
+    @apply border-l-[2px] border-r-[2px] border-secondary;
     @apply hidden lg:flex-[2] lg:flex lg:flex-col lg:items-start;
-    @apply border-l-[2px] border-r-[2px] border-secondary
 }
 
 .picture-form {
@@ -49,9 +49,9 @@
 }
 
 .name-details {
-    @apply min-w-[296px] max-w-[324px];
     @apply gap-[4px];
     @apply flex flex-col;
+    @apply min-w-[296px] max-w-[324px];
 }
 
 .salutation-row {
@@ -68,14 +68,14 @@
 
 .salutation {
     @apply text-xs;
-    @apply bg-secondary;
     @apply px-[4px];
+    @apply bg-secondary;
 }
 
 .edit-button {
     @apply h-fit;
-    @apply box-content;
     @apply text-2xs;
+    @apply box-content;
     @apply rounded-full;
     @apply bg-primary-accent;
     @apply px-[12px] py-[4px];
@@ -146,10 +146,10 @@
 
 .social-link-container {
     @apply w-full;
-    @apply px-[8px] py-[2px];
     @apply text-2xs;
     @apply bg-secondary;
     @apply rounded-[8px];
+    @apply px-[8px] py-[2px];
 }
 
 .main-content-heading {
@@ -170,8 +170,8 @@
 }
 
 .degree-name {
-    @apply text-xs;
     @apply w-full;
+    @apply text-xs;
     @apply bg-secondary;
     @apply rounded-l-[8px];
     @apply px-[8px] py-[4px];
@@ -245,8 +245,8 @@
 .submit-button {
     @apply text-xs;
     @apply rounded-[8px];
-    @apply px-[24px] py-[8px];
     @apply bg-primary-accent;
+    @apply px-[24px] py-[8px];
 }
 
 .publication-domain {
