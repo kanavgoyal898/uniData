@@ -12,7 +12,7 @@
     @apply mb-[12px];
     @apply bg-secondary;
     @apply flex flex-row justify-center;
-    @apply rounded-[16px] w-[240px] md:w-[360px];
+    @apply rounded-md w-[240px] md:w-[360px];
 }
 
 .credentials-form-box {
@@ -37,7 +37,7 @@
     @apply text-xs;
     @apply bg-primary text-complement;
     @apply mt-[2px] md:mt-[4px] px-[8px];
-    @apply h-[20px] md:h-[32px] w-[200px] md:w-[300px] rounded-[4px] md:rounded-[8px]; 
+    @apply h-[20px] md:h-[32px] w-[200px] md:w-[300px] rounded-xs md:rounded-sm; 
 }
 
 .credentials-button-container {
@@ -48,14 +48,14 @@
     @apply text-xs;
     @apply max-w-fit;
     @apply px-[24px] py-[8px];
-    @apply bg-primary-accent border-[2px] border-secondary rounded-[8px];  
+    @apply bg-primary-accent border-[2px] border-secondary rounded-sm;  
 }
 
 .alternative-sign {
     @apply py-[16px];
     @apply bg-secondary;
     @apply flex flex-col items-center gap-[4px];
-    @apply rounded-[16px] w-[240px] md:w-[360px];
+    @apply rounded-md w-[240px] md:w-[360px];
 }
 
 .instructions {

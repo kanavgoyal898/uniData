@@ -1,0 +1,37 @@
+.paper-container {
+    height: calc(100vh - 72px);
+    @apply flex flex-row;
+}
+
+.details-container {
+    @apply bg-tertiary;
+    @apply overflow-y-scroll;
+    @apply hidden lg:flex-[1];
+    @apply border-l-[2px] border-secondary;
+    @apply lg:flex lg:flex-col lg:items-center;
+}
+
+.sub-container {
+    @apply flex flex-col items-center;
+}
+
+.sub-container-title {
+    @apply text-sm;
+    @apply my-[16px];
+}
+
+.contributor-list {
+    @apply px-[16px];
+    @apply flex-wrap;
+    @apply flex flex-row;
+    @apply justify-start;
+}
+
+.contributor-container {
+    @apply h-[32px] w-[32px];
+}
+
+.contributor {
+    @apply h-[32px] w-[32px];
+    @apply rounded-full object-cover;
+}

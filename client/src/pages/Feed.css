@@ -1,0 +1,31 @@
+.feed-container {
+    height: calc(100vh - 72px);
+    @apply flex flex-row;
+}
+
+.section-heading {
+    @apply text-xs;
+}
+
+.feed-left-container {
+    @apply pt-[16px];
+    @apply bg-primary;
+    @apply overflow-y-auto;
+    @apply hidden md:flex-[1];
+    @apply md:flex md:flex-col items-center; 
+}
+
+.feed-middle-container {
+    @apply bg-tertiary;
+    @apply overflow-y-auto;
+    @apply flex-[3] flex flex-col items-center;
+    @apply border-0 md:border-l-[2px] md:border-r-[2px] md:border-secondary;
+}
+
+.feed-right-container {
+    @apply pt-[16px];
+    @apply bg-tertiary;
+    @apply overflow-y-auto;
+    @apply hidden md:flex-[1];
+    @apply md:flex md:flex-col items-center;
+}

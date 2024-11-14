@@ -1,0 +1,66 @@
+.publications-container {
+    @apply flex flex-col;
+}
+
+.publication-container-heading {
+    @apply w-full;
+    @apply text-xs;
+    @apply py-[16px];
+    @apply bg-primary;
+    @apply flex flex-row justify-center;
+    @apply border-b-[2px] border-secondary;
+}
+
+.publication-row {
+    @apply text-xs;
+    @apply gap-[16px];
+    @apply flex flex-row;
+    @apply hover:bg-primary;
+    @apply py-[8px] md:py-[16px];
+}
+
+.table-column-serial {
+    @apply mx-[6px];
+    @apply text-end;
+    @apply flex-[1] md:flex-[1];
+}
+
+.table-column-title {
+    @apply mx-[6px];
+    @apply text-start;
+    @apply flex-[11] md:flex md:flex-[8];
+}
+
+.table-column-profiles {
+    @apply mx-[6px];
+    @apply text-start;
+    @apply hidden md:flex md:flex-[3];
+}
+
+.contributors-list {
+    @apply gap-[16px];
+    @apply items-center;
+    @apply flex flex-row;
+}
+
+.contributor-pictures {
+    @apply flex flex-row;
+}
+
+.contributor-picture {
+    @apply ml-[-14px];
+    @apply h-[28px] w-[28px];
+    @apply rounded-full object-cover;
+    @apply border-[1px] border-complement;
+}
+
+.contributor-picture:first-child {
+    @apply ml-[0px];
+}
+
+.more-contributors {
+    @apply hidden;
+    @apply lg:flex;
+    @apply hover:underline;
+    @apply text-2xs text-secondary-accent;
+}

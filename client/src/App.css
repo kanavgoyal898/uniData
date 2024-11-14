@@ -1,5 +1,26 @@
 .content {
   @apply px-[12px];
-  @apply flex flex-col justify-center;
+  @apply flex flex-col;
+  @apply justify-center;
   @apply w-screen h-screen min-h-screen;
+}
+
+.page {
+  @apply h-full;
+}
+
+.outline-button {
+  @apply text-xs;
+  @apply max-w-fit;
+  @apply bg-tertiary;
+  @apply px-[24px] py-[8px];
+  @apply border-[2px] border-secondary rounded-sm; 
+}
+
+.filled-button {
+  @apply text-xs;
+  @apply max-w-fit;
+  @apply rounded-sm; 
+  @apply bg-primary-accent;
+  @apply px-[24px] py-[8px];
 }

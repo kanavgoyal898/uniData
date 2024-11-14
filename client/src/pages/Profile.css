@@ -1,0 +1,19 @@
+.main-content {
+    height: calc(100vh - 72px);
+    @apply flex flex-row;
+}
+
+.center-container {
+    height: calc(100vh - 72px);
+    @apply hidden;
+    @apply gap-[12px];
+    @apply lg:items-start;
+    @apply overflow-y-auto;
+    @apply px-[16px] py-[16px];
+    @apply lg:flex-[2] lg:flex lg:flex-col;
+    @apply border-l-[2px] border-r-[2px] border-secondary;
+}
+
+.main-content-heading {
+    @apply text-sm;
+}

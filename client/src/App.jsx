@@ -1,11 +1,11 @@
 import './App.css'
-import PublicProfile from './components/PublicProfile'
-import Homepage from './components/Homepage'
-import Profile from './components/Profile'
-import SignIn from './components/SignIn'
-import SignUp from './components/SignUp'
-import Paper from './components/Paper'
-import Feed from './components/Feed'
+import React from 'react'
+import Homepage from './pages/Homepage'
+import Profile from './pages/Profile'
+import SignIn from './pages/SignIn'
+import SignUp from './pages/SignUp'
+import Paper from './pages/Paper'
+import Feed from './pages/Feed'
 
 function App() {
 

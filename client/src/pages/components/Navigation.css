@@ -1,0 +1,64 @@
+.navigation-bar {
+    @apply top-0;
+    @apply sticky;
+    @apply h-[72px];
+    @apply bg-primary;
+    @apply flex flex-row;
+    @apply ps-[4px] sm:ps-[48px];
+    @apply pe-[4px] sm:pe-[12px];
+    @apply justify-between items-center;
+    @apply border-b-[2px] border-secondary;
+}
+
+.home-navigation-button {
+    @apply text-md;
+}
+
+.search-container {
+    @apply hidden;
+    @apply sm:flex;
+}
+
+.search-bar {
+    @apply h-[36px];
+    @apply bg-secondary;
+    @apply px-[16px] py-[4px];
+    @apply text-xs text-complement;
+    @apply border-none rounded-full;
+    @apply min-w-[360px] max-w-[720px];
+}
+
+.profile-container {
+    @apply gap-[12px];
+    @apply items-center;
+    @apply flex flex-row; 
+}
+
+.profile-box {
+    @apply hidden;
+    @apply md:items-end;
+    @apply md:flex md:flex-col;
+}
+
+.profile-name {
+    @apply text-xs text-complement;
+}
+
+.action-buttons {
+    @apply gap-[8px];
+    @apply flex flex-row;
+}
+
+.status {
+    @apply text-2xs text-primary-accent;
+}
+
+.sign-out {
+    @apply hover:underline;
+    @apply text-2xs text-secondary-accent;
+}
+
+.profile-picture {
+    @apply h-[48px] w-[48px];
+    @apply rounded-full object-cover;
+}

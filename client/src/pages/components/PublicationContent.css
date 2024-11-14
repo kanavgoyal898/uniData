@@ -1,0 +1,112 @@
+.new-publication {
+    @apply w-[640px];
+    @apply flex flex-col;
+}
+
+.publication-row {
+    @apply items-start;
+    @apply flex flex-row;
+    @apply justify-between;
+}
+
+.import-button {
+    @apply text-2xs;
+    @apply rounded-sm;
+    @apply px-[24px] py-[8px];
+    @apply bg-secondary-accent;
+}
+
+.publication-details-row {
+    @apply gap-[8px];
+    @apply flex flex-row;
+}
+
+.publication-details {
+    @apply flex-[3];
+    @apply flex flex-col;
+    @apply items-start gap-[8px];
+}
+
+.publication-title {
+    @apply w-full;
+    @apply text-xs;
+    @apply rounded-sm;
+    @apply bg-secondary;
+    @apply px-[8px] py-[8px];
+}
+
+.publication-abstract {
+    @apply w-full;
+    @apply text-xs;
+    @apply h-[160px];
+    @apply rounded-sm;
+    @apply resize-none;
+    @apply bg-secondary;
+    @apply px-[8px] py-[8px];
+}
+
+.publication-row-submit {
+    @apply w-full;
+    @apply gap-[16px];
+    @apply items-center;
+    @apply flex flex-row;
+}
+
+.publication-sub-details {
+    @apply gap-[8px];
+    @apply items-start;
+    @apply flex-[1] flex flex-col;
+}
+
+.publication-domain {
+    @apply w-full;
+    @apply text-2xs;
+    @apply rounded-sm;
+    @apply bg-secondary;
+    @apply px-[8px] py-[8px];
+}
+
+.collaborators-container {
+    @apply w-full;
+    @apply gap-[32px];
+    @apply items-center;
+    @apply flex flex-col;
+}
+
+.collaborators-sub-container {
+    @apply flex-wrap;
+    @apply flex flex-row;
+    @apply justify-center;
+    @apply w-full max-h-[124px];
+    @apply gap-x-[8px] gap-y-[8px];
+}
+
+.collaborator-container {
+    @apply h-[28px] w-[28px];
+}
+
+.collaborator-picture {
+    @apply h-[28px] w-[28px];
+    @apply object-cover rounded-full;
+}
+
+.extra-collaborators {
+    @apply text-3xs;
+    @apply bg-transparent;
+    @apply px-[8px] py-[8px];
+    @apply rounded-full border-[2px] border-secondary-accent;
+}
+
+.add-collaborators-button {
+    @apply text-2xs;
+    @apply rounded-sm;
+    @apply px-[24px] py-[8px];
+    @apply bg-secondary-accent;
+}
+
+.submit-button {
+    @apply text-xs;
+    @apply rounded-sm;
+    @apply bg-primary-accent;
+    @apply px-[24px] py-[8px];
+}

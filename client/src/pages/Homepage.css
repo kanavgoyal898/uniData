@@ -1,0 +1,29 @@
+.hero-section-container {
+    @apply ps-0 md:ps-[128px];
+    @apply mx-[32px] my-[32px];
+    @apply items-center md:items-start;
+}
+
+.hero-text-container {
+    @apply flex flex-col;
+    @apply text-center md:text-left;
+    @apply items-center md:items-start;
+}
+
+.hero-heading {
+    @apply text-3xl;
+}
+
+.sub-hero-heading {
+    @apply text-xl;
+    @apply w-[256px] md:w-[448px];
+}
+
+.hero-buttons {
+    @apply text-md;
+    @apply pt-[24px];
+    @apply gap-[8px] md:gap-[24px];
+    @apply items-center md:items-start;
+    @apply justify-center md:justify-start;
+    @apply flex flex-col md:flex md:flex-row;
+}

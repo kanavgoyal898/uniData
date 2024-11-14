@@ -1,21 +1,7 @@
 import React from 'react'
-import Navigation from './Navigation'
-import './Page.css'
-import './Feed.css'
+import './Publications.css'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBuildingColumns, faLink } from '@fortawesome/free-solid-svg-icons'
-import { faGoogleScholar, faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
-
-const socials = [
-    { link: "/", icon: faGoogleScholar },
-    { link: "/", icon: faGithub },
-    { link: "/", icon: faLinkedinIn },
-    { link: "/", icon: faBuildingColumns },
-    { link: "/", icon: faLink },
-]
-
-const Publications = [
+const publications = [
     {
         title: "A Comprehensive Review and Analysis of Machine Learning Approaches for Big Data Analytics and Data Mining Techniques in the Context of Cloud Computing",
         link: "/",
@@ -109,69 +95,39 @@ const Publications = [
     }
 ]
 
-const PublicProfile = () => {
+const Publications = () => {
     return (
-        <div className="page">
-            <Navigation />
-            <div className="feed-container">
-                <div className="left-container">
-                    <p className="section-heading">Collaborator(s)</p>
-                </div>
-                <div className="middle-container">
-                    <div className="author-details-container">
-                        <div className="author-picture-container">
-                            <img src="https://media.gq.com/photos/5aa72bbf1d388948225ce5cd/4:3/w_1920,h_1440,c_limit/josh-radnor-gq.jpg" alt="profile" className="author-picture"/>
-                        </div>
-                        <div className="author-details">
-                            <div className="author-name">
-                                Ted Mosby
-                            </div>
-                            <div className="author-email">
-                                tedmosby@himym.com
-                            </div>
-                            <div className="socials">
-                                {socials.map((social, index) => {
-                                    return (
-                                        <a key={index} href={social.link} >
-                                            <FontAwesomeIcon icon={social.icon} />
-                                        </a>
-                                    )
-                                })}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="middle-container-heading">Publications</div>
-                        <table className="publication-table">
-                            {Publications.map((publication, index) => {
-                                return (
-                                    <a href="{publication.link}">
-                                        <tr key={index} className="publication-row">
-                                            <td className="table-column-serial">{index+1}.</td>
-                                            <td className="table-column-title">{publication.title}</td>
-                                            <td className="table-column-profiles">
-                                                <a href="/" className="contributor-list">
-                                                    <div className="contributor-pictures">
-                                                        {publication.authors.slice(0, 3).map((author, index) => {
-                                                            return (
-                                                                <img key={index} className="contributor-picture" style={{ zIndex: publication.authors.length - index }} src={author.imageUrl} alt="contributor" />
-                                                            )
-                                                        })}
-                                                    </div>
-                                                    {publication.authors.length > 3 && <a className="more-contributors" href="/"> + {publication.authors.length - 3} more</a>}
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    </a>
-                                )
-                            })}
-                        </table>
-                </div>
-                <div className="right-container">
-                    <p className="section-heading">Author Details</p>
-                </div>
+        <div className="publications-container">
+            <div className="publication-container-heading">
+                Publications
             </div>
+            {/* TODO: Add Filters Functionality Here */}
+            <table>
+                {publications.map((publication, index) => {
+                    return (
+                        <a key={index} href={publication.link}>
+                            <tr className="publication-row">
+                                <td className="table-column-serial">{index+1}.</td>
+                                <td className="table-column-title">{publication.title}</td>
+                                <td className="table-column-profiles">
+                                    <a href="/" className="contributors-list">
+                                        <div className="contributor-pictures">
+                                            {publication.authors.slice(0, 3).map((author, index) => {
+                                                return (
+                                                    <img key={index} className="contributor-picture" style={{ zIndex: publication.authors.length - index }} src={author.imageUrl} alt="contributor" />
+                                                )
+                                            })}
+                                        </div>
+                                        {publication.authors.length > 3 && (<a className="more-contributors" href="/"> + {publication.authors.length - 3} more</a>)}
+                                    </a>
+                                </td>
+                            </tr>
+                        </a>
+                    )
+                })}
+            </table>
         </div>
     )
 }
 
-export default PublicProfile
+export default Publications

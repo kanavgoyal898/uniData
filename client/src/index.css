@@ -23,6 +23,10 @@
   --font-3xl: 64px;
   --font-4xl: 72px;
   --font-5xl: 96px;
+
+  --border-radius-xs: 4px;
+  --border-radius-sm: 8px;
+  --border-radius-md: 16px;
 }
 
 @media (prefers-color-scheme: dark) {

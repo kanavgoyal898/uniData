@@ -1,0 +1,42 @@
+.education-section {
+    max-height: calc((100vh - 72px) / 2);
+    @apply overflow-y-auto;
+}
+
+.education-form {
+    @apply py-[8px];
+    @apply w-[640px];
+    @apply gap-[4px];
+    @apply items-start;
+    @apply flex flex-col;
+}
+
+.degree-container {
+    @apply w-full;
+    @apply gap-[4px];
+    @apply flex flex-row;
+}
+
+.degree-name {
+    @apply w-full;
+    @apply text-xs;
+    @apply bg-secondary;
+    @apply rounded-l-sm;
+    @apply px-[8px] py-[4px];
+}
+
+.degree-year {
+    @apply text-xs;
+    @apply w-[72px];
+    @apply bg-secondary;
+    @apply rounded-r-sm;
+    @apply px-[8px] py-[4px];
+}
+
+.university-name {
+    @apply w-full;
+    @apply text-xs;
+    @apply bg-secondary;
+    @apply rounded-[8px];
+    @apply px-[8px] py-[4px];
+}
