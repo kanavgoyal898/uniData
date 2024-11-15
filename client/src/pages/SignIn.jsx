@@ -1,10 +1,41 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { useNavigate, Link } from 'react-router-dom'
 import './Sign.css'
 
 const SignIn = () => {
+    const navigate = useNavigate()
     const {register, handleSubmit, setError, formState: {errors}} = useForm()
-    const onSubmit = (data) => {
+    const onSubmit = async (data) => {
+        try {
+            const url = "http://localhost:3000/auth/signin"
+            const response = await fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data)
+            })
+            const result = await response.json()
+            if (result.success) {
+                console.log("User logged in successfully")
+                localStorage.setItem("userEmail", result["email"])
+                localStorage.setItem("userToken", result["jwtToken"])
+                setTimeout(() => {
+                    navigate("/feed")
+                }, 2000)
+            } else {
+                setError("credentials", {
+                    type: "manual",
+                    message: result.message,
+                })
+            }
+        } catch (error) {
+            setError("credentials", {
+                type: "manual",
+                message: "An error occurred, please try again later",
+            })
+        }
         console.log(data)
     }
 
@@ -32,13 +63,13 @@ const SignIn = () => {
                         <button className="credential-button" type="submit">Sign in</button>
                     </div>
                     <div>
-                        {errors.credentials && <p className="form-error">{errors.credentials.message}</p>}
+                        {errors.credentials && <p className="server-error">{errors.credentials.message}</p>}
                     </div>
                 </form>
             </div>
             <div className="alternative-sign">
                 <div className="instructions">New to uniData?</div>
-                <a className="credentials-link" href="/">Create an account</a>
+                <Link className="credentials-link" to="/signup">Create an account</Link>
             </div>
             <div className="more-links">
                 <a className="credentials-link" href="/">Terms & Conditions</a>

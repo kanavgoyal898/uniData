@@ -79,3 +79,11 @@
     @apply text-2xs;
     @apply text-primary-accent;
 }
+
+.server-error {
+    @apply pb-[8px];
+    @apply text-2xs;
+    @apply flex flex-row;
+    @apply justify-center;
+    @apply text-primary-accent;
+}

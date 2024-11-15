@@ -28,7 +28,7 @@
     @apply min-w-[360px] max-w-[720px];
 }
 
-.profile-container {
+.navigation-profile-container {
     @apply gap-[12px];
     @apply items-center;
     @apply flex flex-row; 
@@ -58,7 +58,7 @@
     @apply text-2xs text-secondary-accent;
 }
 
-.profile-picture {
+.navigation-profile-picture {
     @apply h-[48px] w-[48px];
     @apply rounded-full object-cover;
 }

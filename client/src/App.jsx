@@ -1,6 +1,7 @@
 import './App.css'
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import RefreshHandler from './RefreshHandler'
 import Homepage from './pages/Homepage'
 import Profile from './pages/Profile'
 import SignIn from './pages/SignIn'
@@ -9,10 +10,16 @@ import Paper from './pages/Paper'
 import Feed from './pages/Feed'
 
 function App() {
+  const [isSignedIn, setIsSignedIn] = React.useState(localStorage.getItem("userToken") ? true : false)
+
+  const PrivateRoute = ({ element }) => {
+    return isSignedIn ? element : <Navigate to="/" />
+  }
 
   return (
     <div className="content">
       <Router>
+        <RefreshHandler setIsSignedIn={setIsSignedIn} />
         <Routes>
           <Route path="/" element={<div className="content"><Homepage /></div>} />
           <Route path="/profile" element={<div className="content"><Profile /></div>} />

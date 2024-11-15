@@ -4,7 +4,7 @@ import Author from './components/Author'
 import Navigation from './components/Navigation'
 import Publications from './components/Publications'
 
-const PublicProfile = ({isProfile=true}) => {
+const PublicProfile = ({isProfile=false}) => {
     return (
         <div className="page">
             <Navigation />

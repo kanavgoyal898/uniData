@@ -1,7 +1,10 @@
 import React from 'react'
+import { useNavigate, Link } from 'react-router-dom'
 import './Homepage.css'
 
 const Homepage = () => {
+    const navigate = useNavigate()
+
     return (
         <div className="page">
             <div className="hero-section-container">
@@ -10,8 +13,8 @@ const Homepage = () => {
                     <h2 className="sub-hero-heading">Your Hub for Research, Records, and Collaboration</h2>
                 </div>
                 <div className="hero-buttons">
-                    <button className="outline-button">Explore</button>
-                    <button className="filled-button">Sign In</button>
+                    <Link className="outline-button" to="/feed">Explore</Link>
+                    <Link className="filled-button" to="/signin">Sign In</Link>
                 </div>
             </div>
         </div>

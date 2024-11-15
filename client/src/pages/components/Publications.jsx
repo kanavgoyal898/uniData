@@ -110,7 +110,7 @@ const Publications = () => {
                                 <td className="table-column-serial">{index+1}.</td>
                                 <td className="table-column-title">{publication.title}</td>
                                 <td className="table-column-profiles">
-                                    <a href="/" className="contributors-list">
+                                    <div href="/" className="contributors-list">
                                         <div className="contributor-pictures">
                                             {publication.authors.slice(0, 3).map((author, index) => {
                                                 return (
@@ -119,7 +119,7 @@ const Publications = () => {
                                             })}
                                         </div>
                                         {publication.authors.length > 3 && (<a className="more-contributors" href="/"> + {publication.authors.length - 3} more</a>)}
-                                    </a>
+                                    </div>
                                 </td>
                             </tr>
                         </a>
