@@ -22,6 +22,7 @@ const socialsUpdate = async (req, res) => {
         } else {
             user.public.bio = req.body?.bio
             user.public.name = req.body?.name
+            user.public.profile = req.body?.profile
             user.public.socials.googleScholar = req.body?.googleScholar
             user.public.socials.github = req.body?.github
             user.public.socials.linkedIn = req.body?.linkedIn

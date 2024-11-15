@@ -5,6 +5,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBuildingColumns, faLink } from '@fortawesome/free-solid-svg-icons'
 import { faGoogleScholar, faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 
+function convert64(picture) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader()
+        reader.readAsDataURL(picture)
+        reader.onload = () => resolve(reader.result)
+        reader.onerror = (error) => reject("Error: " + error)
+    })
+}
+
 const links = [
     {
         name: "googleScholar",
@@ -35,6 +44,7 @@ const links = [
 
 const ProfileContent = () => {
     const [user, setUser] = React.useState({})
+    const [profile, setProfile] = React.useState()
     const [isEditable, setIsEditable] = React.useState(false)
     const {register, handleSubmit, reset, formState: {errors}} = useForm()
 
@@ -52,6 +62,30 @@ const ProfileContent = () => {
                 const result = await response.json()
                 if (result.success) {
                     setUser(result.user)
+                } else {
+                    console.error(result.message)
+                }
+            } catch (error) {
+                console.error(error)
+            }
+        }
+        fetchUser()
+    }, [])
+
+    React.useEffect(() => {
+        const fetchUser = async () => {
+            try {
+                const url = "http://localhost:3000/user/picture"
+                const response = await fetch(url, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": localStorage.getItem("userToken"),
+                    }
+                })
+                const result = await response.json()
+                if (result.success) {
+                    setProfile(result.user || "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541")
                 } else {
                     console.error(result.message)
                 }
@@ -92,16 +126,36 @@ const ProfileContent = () => {
         }
     }
 
-    const triggerFileInput = (event) => {
-        event.preventDefault()
-        console.log("triggerFileInput")
-        document.getElementById("picture").click()
-    }
-
-    const triggerFileSubmit = (event) => {
-        event.preventDefault()
-        console.log("triggerFileSubmit")
-        document.getElementById("picture-form").submit()
+    const onFileSubmit = async (event) => {
+        const file = event.target.files[0]
+        if (file) {
+            if (file.size > 5000000) {
+                alert("File size is too large. Please upload a smaller image.");
+                return;
+            } else {
+                const url = "http://localhost:3000/user/picture"
+                const data = await convert64(file)
+                try {
+                    const response = await fetch(url, {
+                        method: "PUT",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Authorization": localStorage.getItem("userToken"),
+                        },
+                        body: JSON.stringify({picture: data})
+                    })
+                    const result = await response.json()
+                    if (result.success) {
+                        setProfile(data)
+                        console.log("User picture updated successfully")
+                    } else {
+                        console.log("User picture update failed:", result.message)
+                    }
+                } catch (error) {
+                    console.error(error)
+                }
+            }
+        }
     }
 
     const handleEditToggle = () => {
@@ -112,12 +166,12 @@ const ProfileContent = () => {
         <div className="profile-container">
             <form id="picture-form" className="picture-form" encType="multipart/form-data">
                 <div className="picture-container">
-                    <img src="https://media.gq.com/photos/5aa72bbf1d388948225ce5cd/4:3/w_1920,h_1440,c_limit/josh-radnor-gq.jpg" alt="profile" className="profile-picture" />
+                    <img src={profile} alt="profile" className="profile-picture" />
                 </div>
-                <button className="edit-picture-button" onClick={triggerFileInput}>
+                <button type="button" className="edit-picture-button" onClick={() => document.getElementById("picture").click()}>
                     Change Picture
                 </button>
-                <input onChange={triggerFileSubmit} type="file" name="picture" id="picture" accept="image/png, image/jpeg, image/jpg, image/gif" {...register("picture")} hidden />
+                <input type="file" name="picture" id="picture" accept="image/png, image/jpeg, image/jpg, image/gif" onChange={onFileSubmit} hidden />
             </form>
             <form className="details-form" id="details-form" onSubmit={handleSubmit(onSubmit)}>
                 <div className="name-details">
@@ -144,7 +198,7 @@ const ProfileContent = () => {
                                 <div className="social-icon-container">
                                     <FontAwesomeIcon icon={link.icon} className="social-icon" />
                                 </div>
-                                <input type="text" name={link.name} value={user[link.name]} placeholder={user.socials?.[link.name] ? user.socials[link.name] : link.url} {...register(link.name)} className="social-link-container" disabled={!isEditable} />
+                                <input type="text" name={link.name} placeholder={user.socials?.[link.name] ? user.socials[link.name] : link.url} defaultValue={user.socials?.[link.name] ? user.socials[link.name] : link.url} {...register(link.name)} className="social-link-container" disabled={!isEditable} />
                             </div>
                         ))}
                     </div>
