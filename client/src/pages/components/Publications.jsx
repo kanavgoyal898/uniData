@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Publications.css'
 
 const publications = [
@@ -105,7 +106,7 @@ const Publications = () => {
             <table>
                 {publications.map((publication, index) => {
                     return (
-                        <a key={index} href={publication.link}>
+                        <Link key={index} to="/paper">
                             <tr className="publication-row">
                                 <td className="table-column-serial">{index+1}.</td>
                                 <td className="table-column-title">{publication.title}</td>
@@ -122,7 +123,7 @@ const Publications = () => {
                                     </div>
                                 </td>
                             </tr>
-                        </a>
+                        </Link>
                     )
                 })}
             </table>

@@ -34,9 +34,9 @@ const Navigation = () => {
                                     <button className="sign-out" onClick={handleLogout}>Sign out</button>
                                 </div>
                             </div>
-                            <div>
+                            <Link to="/profile">
                                 <img className="navigation-profile-picture" src="https://media.gq.com/photos/5aa72bbf1d388948225ce5cd/4:3/w_1920,h_1440,c_limit/josh-radnor-gq.jpg" alt="profile" />
-                            </div>
+                            </Link>
                         </div>
                     ) : (
                         <button onClick={handleLogout} className="filled-button">

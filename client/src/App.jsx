@@ -12,10 +12,6 @@ import Feed from './pages/Feed'
 function App() {
   const [isSignedIn, setIsSignedIn] = React.useState(localStorage.getItem("userToken") ? true : false)
 
-  const PrivateRoute = ({ element }) => {
-    return isSignedIn ? element : <Navigate to="/" />
-  }
-
   return (
     <div className="content">
       <Router>
