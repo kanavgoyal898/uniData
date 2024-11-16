@@ -31,10 +31,14 @@ const publicationCreate = async (req, res) => {
             const title = req.body.title
             const abstract = req.body.abstract
             const link = req.body.link
-            const authors = [req.user.email].concat(req.body.authors)
+
+            let authors = [req.user.email]
+            if (req.body.authors) [
+                authors = authors.concat(req.body.authors)
+            ]
+
             const newPublication = new publicationModel({title, abstract, authors, link})
             await newPublication.save()
-
             for (const author of authors) {
                 const authorUser = await userModel.findOne({email: author})
                 if (authorUser) {

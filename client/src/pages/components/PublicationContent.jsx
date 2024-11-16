@@ -1,4 +1,5 @@
 import React from 'react'
+import { useForm } from 'react-hook-form'
 import './PublicationContent.css'
 
 const collaborators = [
@@ -75,6 +76,31 @@ const collaborators = [
 ]
 
 const PublicationContent = () => {
+    const {register, handleSubmit, reset, setError, formState: {errors}} = useForm()
+
+    const onSubmit = async (data) => {
+        try {
+            const url = "http://localhost:3000/user/publication"
+            const response = await fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": localStorage.getItem("userToken"),
+                },
+                body: JSON.stringify(data)
+            })
+            const result = await response.json()
+            if (result.success) {
+                reset()
+                console.log("Publication created successfully")
+            } else {
+                console.log("Publication creation failed:", result.message)
+            }
+        } catch(error) {
+            console.log(error)
+        }
+    }
+
     return (
         <div className="new-publication">
             <div className="publication-row">
@@ -85,13 +111,13 @@ const PublicationContent = () => {
                     Import
                 </button>
             </div>
-            <form className="publication-details-row">
+            <form className="publication-details-row" onSubmit={handleSubmit(onSubmit)}>
                 <div className="publication-details">
-                    <input name="title" id="title" placeholder="Publication title" className="publication-title" />
-                    <textarea name="abstract" id="abstract" placeholder="Publication abstract" className="publication-abstract"></textarea>
+                    <input name="title" id="title" placeholder="Publication title" className="publication-title" {...register("title")} />
+                    <textarea name="abstract" id="abstract" placeholder="Publication abstract" className="publication-abstract" {...register("abstract")}></textarea>
                     <div className="publication-row-submit">
                         <button type="submit" className="submit-button">Submit</button>
-                        <input name="external-link" id="external-link" placeholder="External Link" className="publication-domain" />
+                        <input name="external-link" id="external-link" placeholder="External Link" className="publication-domain" {...register("link")} />
                     </div>
                 </div>
                 <div className="publication-sub-details">

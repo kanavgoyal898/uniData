@@ -6,7 +6,7 @@ const pictureRead = async (req, res) => {
         if (!user) {
             return res.status(404).json({message: "User not found", success: false})
         } else {
-            res.status(200).json({message: "Picture read successfully", success: true, user: user?.public?.profile})
+            res.status(200).json({message: "Picture read successfully", success: true, user: user.public?.profile})
         }
     } catch (error) {
         console.log(error)

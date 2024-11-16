@@ -20,11 +20,12 @@ const socialsUpdate = async (req, res) => {
         if (!user) {
             return res.status(404).json({message: "User not found", success: false})
         } else {
-            user.public.bio = req.body?.bio
-            user.public.name = req.body?.name
-            user.public.profile = req.body?.profile
-            user.public.socials = req.body?.socials
-            await user.save()
+            updateFields = {
+                "public.bio": req.body?.bio,
+                "public.name": req.body?.name,
+                "public.socials": req.body?.socials,
+            }
+            await userModel.updateOne({email: req.user.email}, {$set: updateFields})
 
             res.status(200).json({message: "Socials updated successfully", success: true})
         }
