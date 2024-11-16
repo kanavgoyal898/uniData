@@ -13,7 +13,7 @@ const signin = async (req, res) => {
             if (!isValidPassword) {
                 return res.status(403).json({message: "Invalid password", success: false})
             } else {
-                const jwtToken = jwt.sign({_id: user._id, email: user.email}, process.env.SECRET_KEY, {expiresIn: '24h'})
+                const jwtToken = jwt.sign({_id: user._id, email: user.email}, process.env.JWT_SECRET_KEY, {expiresIn: '24h'})
                 res.status(200).json({message: "Signin successful", success: true, jwtToken: jwtToken, email: email})
             }
         }

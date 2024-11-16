@@ -19,24 +19,9 @@ const userSchema = new mongoose.Schema({
         },
         bio: {
             type: String,
-            maxLength: 512,
         },
         socials: {
-            googleScholar: {
-                type: String,
-            },
-            github: {
-                type: String,
-            },
-            linkedIn: {
-                type: String,
-            },
-            universityDomain: {
-                type: String,
-            },
-            portfolio: {
-                type: String,
-            },
+            type: Object,
         }
     },
 })

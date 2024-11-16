@@ -37,7 +37,7 @@ const Navigation = () => {
     }, [])
 
     React.useEffect(() => {
-        const fetchUser = async () => {
+        const fetchUserProfile = async () => {
             try {
                 const url = "http://localhost:3000/user/picture"
                 const response = await fetch(url, {
@@ -57,7 +57,7 @@ const Navigation = () => {
                 console.error(error)
             }
         }
-        fetchUser()
+        fetchUserProfile()
     }, [])
     
     const handleLogout = () => {

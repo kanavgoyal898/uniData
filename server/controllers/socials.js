@@ -23,11 +23,7 @@ const socialsUpdate = async (req, res) => {
             user.public.bio = req.body?.bio
             user.public.name = req.body?.name
             user.public.profile = req.body?.profile
-            user.public.socials.googleScholar = req.body?.googleScholar
-            user.public.socials.github = req.body?.github
-            user.public.socials.linkedIn = req.body?.linkedIn
-            user.public.socials.universityDomain = req.body?.universityDomain
-            user.public.socials.portfolio = req.body?.portfolio
+            user.public.socials = req.body?.socials
             await user.save()
 
             res.status(200).json({message: "Socials updated successfully", success: true})

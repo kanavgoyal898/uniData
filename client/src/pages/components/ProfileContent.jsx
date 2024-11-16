@@ -73,7 +73,7 @@ const ProfileContent = () => {
     }, [])
 
     React.useEffect(() => {
-        const fetchUser = async () => {
+        const fetchUserProfile = async () => {
             try {
                 const url = "http://localhost:3000/user/picture"
                 const response = await fetch(url, {
@@ -93,7 +93,7 @@ const ProfileContent = () => {
                 console.error(error)
             }
         }
-        fetchUser()
+        fetchUserProfile()
     }, [])
 
     const onSubmit = async (data) => {
@@ -108,11 +108,13 @@ const ProfileContent = () => {
                 body: JSON.stringify({
                     name: data.name,
                     bio: data.bio,
-                    googleScholar: data.googleScholar,
-                    github: data.github,
-                    linkedIn: data.linkedIn,
-                    universityDomain: data.universityDomain,
-                    portfolio: data.portfolio,
+                    socials: {
+                        googleScholar: data.googleScholar,
+                        github: data.github,
+                        linkedIn: data.linkedIn,
+                        universityDomain: data.universityDomain,
+                        portfolio: data.portfolio,
+                    },
                 })
             })
             const result = await response.json()
