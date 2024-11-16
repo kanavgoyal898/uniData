@@ -24,6 +24,9 @@ const userSchema = new mongoose.Schema({
             type: Object,
         }
     },
+    publications: {
+        type: Array,
+    }
 })
 
 const User = mongoose.model('user', userSchema)

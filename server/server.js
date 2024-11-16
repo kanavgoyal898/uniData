@@ -10,10 +10,6 @@ require('./models/db')
 app.use(cors())
 app.use(bodyParser.json({ limit: "10mb" }));
 
-app.get("/", (req, res) => {
-  res.send("Hello World!")
-})
-
 app.use('/auth', require('./routes/auth'))
 app.use('/user', require('./routes/user'))
 app.use('/test', require('./routes/test'))
