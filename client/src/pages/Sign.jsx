@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { useForm } from 'react-hook-form'
 import { useNavigate, Link } from 'react-router-dom'
 import './Sign.css'
@@ -19,18 +18,21 @@ const Sign = (props) => {
             })
             const result = await response.json()
             if (result.success) {
-                if (props.isSignInPage) {
-                    console.log("User logged in successfully")
-                    localStorage.setItem("userEmail", result["email"])
-                    localStorage.setItem("userToken", result["jwtToken"])
-                    setTimeout(() => {
-                        navigate("/feed")
-                    }, 1000)
-                } else {
-                    console.log("User created successfully")
-                    setTimeout(() => {
-                        navigate("/signin")
-                    }, 1000)
+                switch(props.isSignInPage) {
+                    case true: {
+                        console.log("User logged in successfully")
+                        localStorage.setItem("userEmail", result["email"])
+                        localStorage.setItem("userToken", result["jwtToken"])
+                        setTimeout(() => {
+                            navigate("/feed")
+                        }, 1000)
+                    }
+                    case false: {
+                        console.log("User created successfully")
+                        setTimeout(() => {
+                            navigate("/signin")
+                        }, 1000)
+                    }
                 }
             } else {
                 setError("credentials", {
